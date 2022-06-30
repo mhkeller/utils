@@ -1,12 +1,10 @@
-prj
+Utils
 ===
+
+> A collection of utility functions
 
 ## Installing
 
 ```
 npm install
 ```
-
-## Running
-
-See package.json scripts for commands.
