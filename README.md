@@ -3,8 +3,8 @@ Utils
 
 > A collection of utility functions
 
-## Installing
+## Installing (not yet on npm)
 
-```
-npm install
+```sh
+npm install @mhkeller/utils
 ```
