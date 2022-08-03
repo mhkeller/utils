@@ -1,5 +1,6 @@
 export { default as checkIsTrue } from './lib/checkIsTrue.js';
 export { default as commas } from './lib/commas.js';
+export { default as filterObject } from './lib/filterObject.js';
 export { default as readDataset } from './lib/readDataset.js';
 export { default as requireArg } from './lib/requireArg.js';
 export { default as sleep } from './lib/sleep.js';
