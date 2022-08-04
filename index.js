@@ -1,6 +1,7 @@
 export { default as checkIsTrue } from './lib/checkIsTrue.js';
 export { default as commas } from './lib/commas.js';
 export { default as connectPg } from './lib/connectPg.js';
+export { default as drawPlot } from './lib/drawPlot.js';
 export { default as drawHistograms } from './lib/drawHistograms.js';
 export { default as filterObject } from './lib/filterObject.js';
 export { default as readDataset } from './lib/readDataset.js';
