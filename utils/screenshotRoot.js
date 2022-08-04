@@ -13,6 +13,11 @@ export default async function screenshotRoot(browser, root, { screenshotOutPath,
 		waitUntil: 'domcontentloaded'
 	});
 
-	await page.addStyleTag({ content: css });
+	/**
+	 * Apply any custom CSS
+	 */
+	if (css) {
+		await page.addStyleTag({ content: css });
+	}
 	await page.locator('body > svg').screenshot({ path: screenshotOutPath });
 }
