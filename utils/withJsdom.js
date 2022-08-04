@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 // from plot-cli https://github.com/Fil/plot-cli/blob/ddc8967288da4a8b7a1d1e85d93fdc4aa894fc55/jsdom.js
 import { promises } from 'fs';
 import { JSDOM } from 'jsdom';
