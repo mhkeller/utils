@@ -17,9 +17,12 @@
   },
   "homepage": "https://github.com/mhkeller/utils#readme",
   "dependencies": {
+    "@observablehq/plot": "^0.5.2",
     "d3-format": "^3.1.0",
     "indian-ocean": "^4.0.2",
+    "jsdom": "^20.0.0",
     "pg": "^8.7.3",
+    "playwright": "^1.24.2",
     "wsk-notify": "^1.0.0"
   },
   "devDependencies": {
