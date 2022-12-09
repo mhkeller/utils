@@ -3,7 +3,7 @@ Utils
 
 > A collection of utility functions
 
-## Installing (not yet on npm)
+## Installing
 
 ```sh
 npm install @mhkeller/utils
