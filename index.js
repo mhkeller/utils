@@ -3,6 +3,7 @@ export { default as commas } from './lib/commas.js';
 export { default as connectPg } from './lib/connectPg.js';
 export { default as createLookup } from './lib/createLookup.js';
 export { default as filterObject } from './lib/filterObject.js';
+export { default as genOutDir } from './lib/genOutDir.js';
 export { default as getDirname } from './lib/getDirname.js';
 export { default as readDataset } from './lib/readDataset.js';
 export { default as requireArg } from './lib/requireArg.js';
