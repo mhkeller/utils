@@ -5,6 +5,7 @@ export { default as createLookup } from './lib/createLookup.js';
 export { default as filterObject } from './lib/filterObject.js';
 export { default as genDirs } from './lib/genDirs.js';
 export { default as getDirname } from './lib/getDirname.js';
+export { default as getNow } from './lib/getNow.js';
 export { default as readDataset } from './lib/readDataset.js';
 export { default as requireArg } from './lib/requireArg.js';
 export { default as sleep } from './lib/sleep.js';
