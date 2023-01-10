@@ -11,5 +11,6 @@ export { default as requireArg } from './lib/requireArg.js';
 export { default as sleep } from './lib/sleep.js';
 export { default as takeEvery } from './lib/takeEvery.js';
 export { default as toTitleCase } from './lib/toTitleCase.js';
+export { default as uniques } from './lib/uniques.js';
 export { default as wait } from './lib/wait.js';
 export { default as writeSync } from './lib/writeSync.js';
