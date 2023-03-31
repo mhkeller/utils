@@ -8,6 +8,7 @@ export { default as getDirname } from './lib/getDirname.js';
 export { default as getNow } from './lib/getNow.js';
 export { default as launchBrowser } from './lib/launchBrowser.js';
 export { default as makeArray } from './lib/makeArray.js';
+export { default as padBy } from './lib/padBy.js';
 export { default as readDataset } from './lib/readDataset.js';
 export { default as requireArg } from './lib/requireArg.js';
 export { default as sleep } from './lib/sleep.js';
