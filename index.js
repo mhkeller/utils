@@ -11,6 +11,7 @@ export { default as makeArray } from './lib/makeArray.js';
 export { default as padBy } from './lib/padBy.js';
 export { default as readDataset } from './lib/readDataset.js';
 export { default as requireArg } from './lib/requireArg.js';
+export { default as screenshotPage } from './lib/screenshotPage.js';
 export { default as sleep } from './lib/sleep.js';
 export { default as takeEvery } from './lib/takeEvery.js';
 export { default as toTitleCase } from './lib/toTitleCase.js';
