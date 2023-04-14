@@ -23,7 +23,8 @@
     "indian-ocean": "^4.0.2",
     "jsdom": "^20.0.0",
     "pg": "^8.7.3",
-    "playwright": "^1.32.1"
+    "playwright": "^1.32.1",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
