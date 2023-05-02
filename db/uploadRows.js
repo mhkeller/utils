@@ -9,9 +9,10 @@ const limit = pLimit(2_000);
 export default async function uploadRows (tableName, rows, {
 	idColumn = 'id',
 	logEvery = 1_500,
-	mapRow = d => d
+	mapRow = d => d,
+	columns = []
 } = {}) {
-	const { pool, uploadRow } = setTableUpload(tableName, Object.keys(rows[0]), {
+	const { pool, uploadRow } = setTableUpload(tableName, columns || Object.keys(rows[0]), {
 		idColumn,
 		logEvery
 	});
