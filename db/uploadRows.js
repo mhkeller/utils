@@ -6,6 +6,16 @@ import commas from '../lib/commas.js';
 
 const limit = pLimit(2_000);
 
+/**
+ * Uploads rows to a table
+ * @param {string} tableName - Name of table to upload to
+ * @param {object[]|string[]} rows - Rows to upload. If an array of strings, must also provide `columns` option and `mapRow` option
+ * @param {object} [options] - Options object
+ * @param {string} [options.idColumn='id'] - Name of column to use as primary key
+ * @param {number} [options.logEvery=1500] - How often to log progress
+ * @param {function} [options.mapRow=d=>d] - Function to map each row before uploading
+ * @param {string[]} [options.columns] - Columns to upload
+ */
 export default async function uploadRows (tableName, rows, {
 	idColumn = 'id',
 	logEvery = 1_500,
