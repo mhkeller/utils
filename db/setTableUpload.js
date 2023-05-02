@@ -1,7 +1,8 @@
 import notify from '@mhkeller/notify';
 import dotenv from 'dotenv';
 
-import { connectPg, commas } from '../../index.js';
+import connectPg from './connectPg.js';
+import commas from '../lib/commas.js';
 
 dotenv.config();
 
@@ -15,10 +16,6 @@ export default function setTableUpload (tableName, cols, { idColumn = 'id', logE
 	`;
 
 		const values = cols.map(c => row[c]);
-
-		// console.log('-----------------');
-		// console.log('text', text);
-		// console.log('values', values);
 
 		await pool.query({
 			text,
