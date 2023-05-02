@@ -8,7 +8,8 @@ const limit = pLimit(2_000);
 
 export default async function uploadRows (tableName, rows, {
 	idColumn = 'id',
-	logEvery = 1_500
+	logEvery = 1_500,
+	mapRow = d => d
 } = {}) {
 	const { pool, uploadRow } = setTableUpload(tableName, Object.keys(rows[0]), {
 		idColumn,
@@ -24,7 +25,7 @@ export default async function uploadRows (tableName, rows, {
 		const batchNumber = Math.floor(i / batchLimit);
 		if (!b[batchNumber]) b[batchNumber] = [];
 
-		const l = limit(() => uploadRow(row, i));
+		const l = limit(() => uploadRow(mapRow(row), i));
 		b[batchNumber].push(l);
 		return b;
 	}, {});
