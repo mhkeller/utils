@@ -30,7 +30,8 @@ export default async function uploadRows (tableName, rows, {
 		return b;
 	}, {});
 
-	notify({ m: 'Grouped rows into...', v: `${Object.keys(batches).length} batches`, d: ['blue', 'bold'] });
+	const batchLength = Object.keys(batches).length;
+	notify({ m: 'Grouped rows into...', v: `${batchLength} batch${batchLength > 1 ? 'es' : ''}`, d: ['blue', 'bold'] });
 
 	// eslint-disable-next-line no-restricted-syntax
 	for (const [batchKey, batchRows] of Object.entries(batches)) {
