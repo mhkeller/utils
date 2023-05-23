@@ -8,6 +8,7 @@ export { default as getNow } from './lib/getNow.js';
 export { default as logProgress } from './lib/logProgress.js';
 export { default as makeArray } from './lib/makeArray.js';
 export { default as padBy } from './lib/padBy.js';
+export { default as prettyMs } from './lib/prettyMs.js';
 export { default as readDataset } from './lib/readDataset.js';
 export { default as readXlsx } from './lib/readXlsx.js';
 export { default as requireArg } from './lib/requireArg.js';
