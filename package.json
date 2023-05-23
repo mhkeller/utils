@@ -9,6 +9,11 @@
     "type": "git",
     "url": "git+https://github.com/mhkeller/utils.git"
   },
+  "exports": {
+    ".": "./index.js",
+    "./db": "./db/index.js",
+    "./scrape": "./scrape/index.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
