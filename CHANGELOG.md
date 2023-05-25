@@ -1,6 +1,14 @@
 Changelog
 ===
 
+# 5.1.0
+
+> 2023-05-25
+
+Add the `roundDecimel` function, use this in prettyMs.
+
+* [e1d8e8016338e27e6048a62de4eb84191d1431af](https://github.com/mhkeller/utils/commit/e1d8e8016338e27e6048a62de4eb84191d1431af)
+
 # 5.0.1
 
 > 2023-05-24
