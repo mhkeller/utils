@@ -5,7 +5,7 @@ Changelog
 
 > Not yet on npm
 
-Add the `queueCalls` function.
+Add the `queueCalls` function. Allow for `logProgress` to have custom messages.
 
 * [0cca4f0b8270d77b6dec052760a7b7900bc2dd40](https://github.com/mhkeller/utils/commit/0cca4f0b8270d77b6dec052760a7b7900bc2dd40)
 
