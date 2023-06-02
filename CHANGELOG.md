@@ -1,6 +1,14 @@
 Changelog
 ===
 
+# 5.2.0
+
+> Not yet on npm
+
+Add the `queueCalls` function.
+
+* [0cca4f0b8270d77b6dec052760a7b7900bc2dd40](https://github.com/mhkeller/utils/commit/0cca4f0b8270d77b6dec052760a7b7900bc2dd40)
+
 # 5.1.0
 
 > 2023-05-25
