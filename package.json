@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/mhkeller/utils#readme",
   "dependencies": {
-    "@mhkeller/notify": "^1.0.0",
+    "@mhkeller/notify": "^1.2.0",
     "@observablehq/plot": "^0.5.2",
     "d3-format": "^3.1.0",
     "dotenv": "^16.0.3",
