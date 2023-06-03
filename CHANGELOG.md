@@ -5,9 +5,11 @@ Changelog
 
 > Not yet on npm
 
-Add the `queueCalls` function. Allow for `logProgress` to have custom messages.
+Add the `queueCalls` function. Allow for `logProgress` to have custom messages. Add configurable indent to `logProgress`.
 
+* [d29c55c2256da8390b8822579ff44ae474138852](https://github.com/mhkeller/utils/commit/d29c55c2256da8390b8822579ff44ae474138852)
 * [0cca4f0b8270d77b6dec052760a7b7900bc2dd40](https://github.com/mhkeller/utils/commit/0cca4f0b8270d77b6dec052760a7b7900bc2dd40)
+* [09aaf5ae53a620ced2c0fb56776a557faa531562](https://github.com/mhkeller/utils/commit/09aaf5ae53a620ced2c0fb56776a557faa531562)
 
 # 5.1.0
 
