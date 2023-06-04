@@ -5,7 +5,7 @@ Changelog
 
 > Not yet on npm
 
-Add the `queueCalls` function. Allow for `logProgress` to have custom messages. Add configurable indent to `logProgress`. Show millieseconds in `prettyMs`. Add `jitter` option to `sleep`. Update docs to `logProgress` and return a boolean whether the log occurred.
+Add the `queueCalls` function. Allow for `logProgress` to have custom messages. Add configurable indent to `logProgress`. Show millieseconds in `prettyMs`. Add `jitter` option to `sleep`. Update docs to `logProgress` and return a boolean whether the log occurred. Create the `makeIndent` function.
 
 * [d29c55c2256da8390b8822579ff44ae474138852](https://github.com/mhkeller/utils/commit/d29c55c2256da8390b8822579ff44ae474138852)
 * [0cca4f0b8270d77b6dec052760a7b7900bc2dd40](https://github.com/mhkeller/utils/commit/0cca4f0b8270d77b6dec052760a7b7900bc2dd40)
@@ -13,6 +13,7 @@ Add the `queueCalls` function. Allow for `logProgress` to have custom messages. 
 * [94737931ae95da87549196b3a0a18aa16fba05a1](https://github.com/mhkeller/utils/commit/94737931ae95da87549196b3a0a18aa16fba05a1)
 * [dedc6cb9f381b7aaad5dbad3ad585ec751cf432d](https://github.com/mhkeller/utils/commit/dedc6cb9f381b7aaad5dbad3ad585ec751cf432d)
 * [011d986fb51ca1df9d3eee277623b85fca097cda](https://github.com/mhkeller/utils/commit/011d986fb51ca1df9d3eee277623b85fca097cda)
+* [080a559bac3fe9068a875844ce725fd32b527b1a](https://github.com/mhkeller/utils/commit/080a559bac3fe9068a875844ce725fd32b527b1a)
 
 # 5.1.0
 
