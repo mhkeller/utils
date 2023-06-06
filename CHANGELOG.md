@@ -6,7 +6,8 @@ Changelog
 > Not yet on npm
 
 * Add the `queueCalls` function. 
-* Allow for `logProgress` to have custom messages and add configurable indent to `logProgress`. * Show millieseconds in `prettyMs`. 
+* Allow for `logProgress` to have custom messages and add configurable indent to `logProgress`. 
+* Show millieseconds in `prettyMs`. 
 * Add `jitter` option to `sleep`. 
 * Update docs to `logProgress` and return a boolean whether the log occurred. 
 * Create the `makeIndent` function. 
