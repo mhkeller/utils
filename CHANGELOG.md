@@ -13,6 +13,7 @@ Changelog
 * Create the `makeIndent` function. 
 * Add jobId to `logProgress`.
 * Create `sleepEvery`.
+* Change install location of `xlsx` per https://github.com/SheetJS/sheetjs/issues/2822
 
 * [d29c55c2256da8390b8822579ff44ae474138852](https://github.com/mhkeller/utils/commit/d29c55c2256da8390b8822579ff44ae474138852)
 * [0cca4f0b8270d77b6dec052760a7b7900bc2dd40](https://github.com/mhkeller/utils/commit/0cca4f0b8270d77b6dec052760a7b7900bc2dd40)

@@ -31,7 +31,7 @@
     "p-limit": "^4.0.0",
     "pg": "^8.7.3",
     "playwright": "^1.32.1",
-    "xlsx": "^0.18.5"
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
