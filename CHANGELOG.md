@@ -3,7 +3,7 @@ Changelog
 
 # 5.2.0
 
-> Not yet on npm
+> 2023-06-09
 
 * Add the `queueCalls` function. 
 * Allow for `logProgress` to have custom messages and add configurable indent to `logProgress`. 
