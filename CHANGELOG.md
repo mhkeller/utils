@@ -24,6 +24,7 @@ Changelog
 * [080a559bac3fe9068a875844ce725fd32b527b1a](https://github.com/mhkeller/utils/commit/080a559bac3fe9068a875844ce725fd32b527b1a)
 * [d7bbc7aa61f01b8ca24a8f6b7419f611398ca5bc](https://github.com/mhkeller/utils/commit/d7bbc7aa61f01b8ca24a8f6b7419f611398ca5bc)
 * [ccbd8568b5dca0372a64bfcebdec5b1fc5ed2aae](https://github.com/mhkeller/utils/commit/ccbd8568b5dca0372a64bfcebdec5b1fc5ed2aae)
+* [c3b9621f32ab821ff1589ce4295ca9f516f4aa16](https://github.com/mhkeller/utils/commit/c3b9621f32ab821ff1589ce4295ca9f516f4aa16)
 
 # 5.1.0
 
