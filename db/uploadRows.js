@@ -1,8 +1,8 @@
 import notify from '@mhkeller/notify';
-import { commas } from '@mhkeller/utils';
 
 import setTableUpload from './setTableUpload.js';
-import queueCalls from '../utils/queueCalls.js';
+import queueCalls from '../lib/queueCalls.js';
+import commas from '../lib/commas.js';
 
 const uploadConcurrency = 2_000;
 
