@@ -15,8 +15,7 @@ export default function setTableUpload (tableName, { cols, idColumn = 'id', logE
 		const text = `INSERT INTO
 			${tableName}(${cols.join(', ')})
 			VALUES(${cols.map((d, j) => `$${j + 1}`)})
-			ON CONFLICT(${idColumn}) DO NOTHING RETURNING FALSE
-	`;
+			ON CONFLICT(${idColumn}) DO NOTHING RETURNING FALSE`;
 
 		const values = cols.map(c => row[c]);
 

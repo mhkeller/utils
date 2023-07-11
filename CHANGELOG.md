@@ -1,9 +1,14 @@
 Changelog
 ===
 
-# 5.2.1
+# 5.3.0
 
 > 2023-07-11
+
+TK
+
+# 5.2.1
+
 
 * Export `makeIndent`, `queueCalls` and `sleepEvery` functions.
 
