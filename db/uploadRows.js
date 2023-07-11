@@ -10,32 +10,26 @@ import commas from '../lib/commas.js';
  * @param {object[]|string[]} rows - Rows to upload. If an array of strings, must also provide `mapRow` option
  * @param {object} [options] - Options object
  * @param {string} [options.idColumn='id'] - Name of column to use as primary key
- * @param {number} [options.logEvery=1500] - How often to log progress
  * @param {function} [options.mapRow=d=>d] - Function to map each row before uploading
  * @param {number} [options.indent=3] - How much to indent logs
  * @param {number} [options.uploadConcurrency=1500] - If not provided, defaults to `logEvery`
  */
 export default async function uploadRows (tableName, rows, {
 	idColumn = 'id',
-	logEvery = 1_500,
 	mapRow = d => d,
 	indent = 3,
-	uploadConcurrency
+	uploadConcurrency = 1_500
 
 } = {}) {
 	if (rows.length === 0) {
 		return;
 	}
 
-	if (typeof uploadConcurrency === 'undefined') {
-		uploadConcurrency = logEvery;
-	}
-
 	const { pool, uploadRow } = setTableUpload(tableName, {
 		cols: Object.keys(mapRow(rows[0])),
 		total: rows.length,
 		idColumn,
-		logEvery,
+		logEvery: uploadConcurrency,
 		mapRow,
 		indent
 	});
