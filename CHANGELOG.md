@@ -7,6 +7,10 @@ Changelog
 
 Removes batches from uploading to db. Also allows you to set concurrency and reports back how many were added versus existed already.
 
+*Breaking changes*
+
+1. `setTableUpload` now takes an object as second arg insetad of `cols`, which is now a field of that object.
+
 * [PR #1](https://github.com/mhkeller/utils/pull/1)
 
 # 5.2.1
