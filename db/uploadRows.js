@@ -1,10 +1,10 @@
-import pLimit from 'p-limit';
 import notify from '@mhkeller/notify';
+import { commas } from '@mhkeller/utils';
 
 import setTableUpload from './setTableUpload.js';
-import commas from '../lib/commas.js';
+import queueCalls from '../utils/queueCalls.js';
 
-const limit = pLimit(2_000);
+const uploadConcurrency = 2_000;
 
 /**
  * Uploads rows to a table
@@ -18,34 +18,32 @@ const limit = pLimit(2_000);
 export default async function uploadRows (tableName, rows, {
 	idColumn = 'id',
 	logEvery = 1_500,
-	mapRow = d => d
+	mapRow = d => d,
+	indent = 3
 } = {}) {
-	const { pool, uploadRow } = setTableUpload(tableName, Object.keys(mapRow(rows[0])), {
+	if (rows.length === 0) {
+		return;
+	}
+	const { pool, uploadRow } = setTableUpload(tableName, {
+		cols: Object.keys(mapRow(rows[0])),
+		total: rows.length,
 		idColumn,
-		logEvery
+		logEvery,
+		mapRow,
+		indent
 	});
+
+	notify({ m: `\t\tUploading rows...`, v: `${commas(rows.length)} rows`, d: ['magenta', 'bold'] });
+	const results = await queueCalls(rows.map(d => mapRow(d)), uploadRow, uploadConcurrency);
+
 	/**
-	 * Arrays can only hold two-point-something million rows
-	 * and we may have more values than that
-	 * Batch these into arrays of one million rows each
+	 * Tally up the result of the insert
 	 */
-	const batchLimit = 1_000_000;
-	const batches = rows.reduce((b, row, i) => {
-		const batchNumber = Math.floor(i / batchLimit);
-		if (!b[batchNumber]) b[batchNumber] = [];
-
-		const l = limit(() => uploadRow(mapRow(row), i));
-		b[batchNumber].push(l);
-		return b;
-	}, {});
-
-	const batchLength = Object.keys(batches).length;
-	notify({ m: 'Grouped rows into...', v: `${batchLength} batch${batchLength > 1 ? 'es' : ''}`, d: ['blue', 'bold'] });
-
-	// eslint-disable-next-line no-restricted-syntax
-	for (const [batchKey, batchRows] of Object.entries(batches)) {
-		notify({ m: `Uploading batch ${batchKey}...`, v: `${commas(batchRows.length)} rows`, d: ['magenta', 'bold'] });
-		await Promise.all(batchRows);
+	const insertedRows = results.reduce((a, r) => a + r.rows.length, 0);
+	if (insertedRows > 0) {
+		notify({ m: `\t\tInserted...`, v: `${commas(insertedRows)} rows`, d: ['green', 'bold', 'underline'] });
+	} else {
+		notify({ m: `\t\tAll rows exist!`, d: ['yellow', 'bold'] });
 	}
 	await pool.end();
 }
