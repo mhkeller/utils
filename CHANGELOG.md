@@ -7,6 +7,8 @@ Changelog
 
 * Export `makeIndent`, `queueCalls` and `sleepEvery` functions.
 
+* [0d07755cd998d6107ff8a6d09ec3e09618a69859](https://github.com/mhkeller/utils/commit/0d07755cd998d6107ff8a6d09ec3e09618a69859)
+* 
 # 5.2.0
 
 > 2023-06-09
