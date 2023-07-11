@@ -1,14 +1,22 @@
 Changelog
 ===
 
-# 5.2.1
+# 5.3.0
 
 > 2023-07-11
 
+Removes batches from uploading to db. Also allows you to set concurrency and reports back how many were added versus existed already.
+
+* [PR #1](https://github.com/mhkeller/utils/pull/1)
+
+# 5.2.1
+
+> 2023-07-11
+> 
 * Export `makeIndent`, `queueCalls` and `sleepEvery` functions.
 
 * [0d07755cd998d6107ff8a6d09ec3e09618a69859](https://github.com/mhkeller/utils/commit/0d07755cd998d6107ff8a6d09ec3e09618a69859)
-* 
+
 # 5.2.0
 
 > 2023-06-09
