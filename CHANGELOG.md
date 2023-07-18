@@ -1,6 +1,14 @@
 Changelog
 ===
 
+# 6.1.0
+
+> 2023-07-17
+
+Add the `showRate` option to `logProgress to show how many requests are being paid per second.
+
+* [33c580f9a5159d4cbfcc3581c129011a8fae68f3](https://github.com/mhkeller/utils/commit/33c580f9a5159d4cbfcc3581c129011a8fae68f3)
+
 # 6.0.1
 
 > 2023-07-11
