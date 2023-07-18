@@ -3,7 +3,7 @@ Changelog
 
 # 6.1.0
 
-> 2023-07-17
+> not yet on npm
 
 Add the `showRate` option to `logProgress to show how many requests are being paid per second.
 
