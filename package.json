@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "docs": "deno doc --html --name='@mhkeller/utils' --output=docs index.js scrape/index.js db/index.js",
+    "preview": "http-server docs",
+    "postdocs": "npm run preview"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mhkeller/utils.git"
