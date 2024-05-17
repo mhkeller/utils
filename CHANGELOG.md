@@ -3,11 +3,12 @@ Changelog
 
 # 6.1.0
 
-> not yet on npm
+> 2024-05-17
 
-Add the `showRate` option to `logProgress to show how many requests are being paid per second.
+Add the `showRate` option to `logProgress` to show how many requests are being paid per second. Updates to xlsx 0.20.2
 
 * [33c580f9a5159d4cbfcc3581c129011a8fae68f3](https://github.com/mhkeller/utils/commit/33c580f9a5159d4cbfcc3581c129011a8fae68f3)
+* [845f85c661d625c06d77ebbe53e45eb3687a300a](https://github.com/mhkeller/utils/commit/845f85c661d625c06d77ebbe53e45eb3687a300a)
 
 # 6.0.1
 
