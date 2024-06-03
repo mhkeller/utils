@@ -1,6 +1,15 @@
 Changelog
 ===
 
+# 7.1.0
+
+> 2024-06-03
+
+Makes the `waitUntil` option in `screenshotPage` configurable. Also adds an aggressive z-index to make sure timestamp shows up on top.
+
+* [9c125285196e496684e0790ac0eb519fe7857ddb](https://github.com/mhkeller/utils/commit/9c125285196e496684e0790ac0eb519fe7857ddb)
+* [56b4d04f794329e3aeed4d85c737cf957b36c59e](https://github.com/mhkeller/utils/commit/56b4d04f794329e3aeed4d85c737cf957b36c59e)
+
 # 7.0.0
 
 > 2024-06-03
