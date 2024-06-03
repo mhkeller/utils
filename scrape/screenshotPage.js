@@ -19,7 +19,7 @@ export default async function screenshotPage (page, url, { path, wait: ms = 5_00
 		const div = document.createElement('div');
 		const d = new Date();
 		div.textContent = `${d.toDateString()} ${d.toTimeString()}`;
-		div.setAttribute('style', 'position: fixed; top: 0; left: 3px;font-family:consolas,monospace;z-index:999999999;');
+		div.setAttribute('style', 'position: fixed; top: 0; left: 3px;font-family:consolas,monospace;z-index:9007199254740991;');
 		document.body.appendChild(div);
 	});
 	await page.screenshot({ path, fullPage: true });
