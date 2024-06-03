@@ -5,11 +5,11 @@ async function wait (page, ms, msg = '') {
 	return page.waitForTimeout(ms);
 }
 
-export default async function screenshotPage (page, url, { path, wait: ms = 5_000 }) {
+export default async function screenshotPage (page, url, { path, wait: ms = 5_000, waitUntil = 'load' }) {
 	if (!path) {
 		throw new TypeError(`Path required for screenshot output`);
 	}
-	await page.goto(url, { waitUntil: 'load' });
+	await page.goto(url, { waitUntil });
 	await wait(page, ms);
 
 	/**
@@ -19,7 +19,7 @@ export default async function screenshotPage (page, url, { path, wait: ms = 5_00
 		const div = document.createElement('div');
 		const d = new Date();
 		div.textContent = `${d.toDateString()} ${d.toTimeString()}`;
-		div.setAttribute('style', 'position: fixed; top: 0; left: 3px;font-family:consolas,monospace;');
+		div.setAttribute('style', 'position: fixed; top: 0; left: 3px;font-family:consolas,monospace;z-index:999999999;');
 		document.body.appendChild(div);
 	});
 	await page.screenshot({ path, fullPage: true });
