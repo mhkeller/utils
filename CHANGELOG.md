@@ -1,6 +1,24 @@
 Changelog
 ===
 
+# 7.0.0
+
+> 2024-06-03
+
+Rename `logProgress` to `initLogProgress` and change it to a curried function.
+
+**Usage:**
+
+```js
+const logProgress = initLogProgress(data.length);
+
+for (const row of data) {
+	logProgress({ every: 1 });
+}
+```
+
+* [524f9e4e94da5671da7c5f85e25c2ed7f5a3b6aa](https://github.com/mhkeller/utils/commit/524f9e4e94da5671da7c5f85e25c2ed7f5a3b6aa)
+
 # 6.1.0
 
 > 2024-05-17
