@@ -7,6 +7,9 @@ Changelog
 
 In `initLogProgress`, specify the `every` value on init. This is an API change but not a breaking one because the defaults will be present.
 
+* [46c836870810b3ab747fc20c698fde9651ac1a56](https://github.com/mhkeller/utils/commit/46c836870810b3ab747fc20c698fde9651ac1a56)
+* [95a433506cd8d0c8d02efa9d5268005b513010d2](https://github.com/mhkeller/utils/commit/95a433506cd8d0c8d02efa9d5268005b513010d2)
+
 # 7.1.0
 
 > 2024-06-03
