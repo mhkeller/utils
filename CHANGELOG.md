@@ -1,6 +1,12 @@
 Changelog
 ===
 
+# 7.1.1
+
+> 2024-06-26
+
+In `initLogProgress`, specify the `every` value on init. This is an API change but not a breaking one because the defaults will be present.
+
 # 7.1.0
 
 > 2024-06-03
