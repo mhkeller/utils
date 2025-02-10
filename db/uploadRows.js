@@ -35,7 +35,7 @@ export default async function uploadRows (tableName, rows, {
 	});
 
 	notify({ m: `\t\tUploading rows...`, v: `${commas(rows.length)} rows`, d: ['magenta', 'bold'] });
-	const results = await queueCalls(rows.map(d => mapRow(d)), uploadRow, uploadConcurrency);
+	const results = await queueCalls(rows.map((d, i) => mapRow(d, i)), uploadRow, uploadConcurrency);
 
 	/**
 	 * Tally up the result of the insert
