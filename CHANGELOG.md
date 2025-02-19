@@ -3,7 +3,7 @@ Changelog
 
 # 7.2.0
 
-> Not yet on npm
+> 2025-02-19
 
 Report extra columns in `setTableUpload.js`. Add some types and add an `i` variable to `mapRow` in `uploadRows.js`
 
