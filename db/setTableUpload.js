@@ -8,10 +8,37 @@ import commas from '../lib/commas.js';
 
 dotenv.config();
 
-export default function setTableUpload (tableName, { cols, idColumn = 'id', logEvery = 1_500, total, indent } = {}) {
+export default async function setTableUpload(
+	tableName,
+	{ cols, idColumn = 'id', logEvery = 1_500, total, indent } = {}
+) {
 	const pool = connectPg(process.env);
 	const idt = makeIndent(indent);
-	async function uploadRow (row, i) {
+
+	/**
+	 * Check all of our columns exist in our target table
+	 */
+	const { rows: tableCols } = await pool.query(
+		`SELECT column_name
+		FROM information_schema.columns
+		WHERE table_name = $1;`,
+		[tableName]
+	);
+
+	const tableColsSet = new Set(tableCols.map(d => d.column_name));
+	const colsSet = new Set(cols.map(d => d.toLowerCase()));
+	const extraCols = colsSet.difference(tableColsSet);
+
+	if (extraCols.size > 0) {
+		notify({
+			m: `${idt}Columns in data not present in target table...`,
+			v: `\n${[...extraCols].join(',\n')}`,
+			d: 'error'
+		});
+		process.exit(1);
+	}
+
+	async function uploadRow(row, i) {
 		const text = `INSERT INTO
 			${tableName}(${cols.join(', ')})
 			VALUES(${cols.map((d, j) => `$${j + 1}`)})
@@ -19,10 +46,19 @@ export default function setTableUpload (tableName, { cols, idColumn = 'id', logE
 
 		const values = cols.map(c => row[c]);
 
-		const result = await pool.query({
-			text,
-			values
-		});
+		let result;
+		try {
+			result = await pool.query({
+				text,
+				values
+			});
+		} catch (err) {
+			notify({ m: `${idt}Error uploading row...`, v: commas(i + 1), d: 'error' });
+			console.error(err);
+
+			console.log(values.map((d, j) => `(${j + 1}) ${cols[j]}: ${d}`).join('\n'));
+			process.exit(1);
+		}
 
 		if (i % logEvery === 0 || i === total - 1) {
 			notify({ m: `${idt}Uploaded...`, v: commas(i + 1), d: ['green', 'bold'] });
