@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "test": "node test/uploadRows.test.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mhkeller/utils.git"

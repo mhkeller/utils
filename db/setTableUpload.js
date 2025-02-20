@@ -52,19 +52,19 @@ export default async function setTableUpload(
 				text,
 				values
 			});
+
+			if (i % logEvery === 0 || i === total - 1) {
+				notify({ m: `${idt}Uploaded...`, v: commas(i + 1), d: ['green', 'bold'] });
+			}
 		} catch (err) {
 			notify({ m: `${idt}Error uploading row...`, v: commas(i + 1), d: 'error' });
 			console.error(err);
 
 			console.log(values.map((d, j) => `(${j + 1}) ${cols[j]}: ${d}`).join('\n'));
-			process.exit(1);
+			return { errors: 1 };
 		}
 
-		if (i % logEvery === 0 || i === total - 1) {
-			notify({ m: `${idt}Uploaded...`, v: commas(i + 1), d: ['green', 'bold'] });
-		}
-
-		return result;
+		return { inserted: result.rows.length };
 	}
 
 	return { pool, uploadRow };
