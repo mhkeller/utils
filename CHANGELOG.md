@@ -1,6 +1,14 @@
 Changelog
 ===
 
+# 7.2.1
+
+> 2025-02-20
+
+Fix missing `await` in `uploadRows.js`. Report out how many rows failed on upload, too.
+
+* [aa381caafc4280e4c4133b5996071fcb001ca379](https://github.com/mhkeller/utils/commit/aa381caafc4280e4c4133b5996071fcb001ca379)
+
 # 7.2.0
 
 > 2025-02-19
