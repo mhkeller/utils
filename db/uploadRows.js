@@ -10,21 +10,21 @@ import commas from '../lib/commas.js';
  * @param {object[]|string[]} rows - Rows to upload. If an array of strings, must also provide `mapRow` option
  * @param {object} [options] - Options object
  * @param {string} [options.idColumn='id'] - Name of column to use as primary key
- * @param {function} [options.mapRow=d=>d] - Function to map each row before uploading
+ * @param {function} [options.mapRow] - Function to map each row before uploading
  * @param {number} [options.indent=3] - How much to indent logs
  * @param {number} [options.uploadConcurrency=1500] - If not provided, defaults to `logEvery`
  */
 export default async function uploadRows(
 	tableName,
 	rows,
-	{ idColumn = 'id', mapRow = d => d, indent = 3, uploadConcurrency = 1_500 } = {}
+	{ idColumn = 'id', mapRow, indent = 3, uploadConcurrency = 1_500 } = {}
 ) {
 	if (rows.length === 0) {
 		return;
 	}
 
 	const { pool, uploadRow } = await setTableUpload(tableName, {
-		cols: Object.keys(mapRow(rows[0])),
+		cols: mapRow ? Object.keys(mapRow(rows[0])) : Object.keys(rows[0]),
 		total: rows.length,
 		idColumn,
 		logEvery: uploadConcurrency,
@@ -34,7 +34,7 @@ export default async function uploadRows(
 
 	notify({ m: `\t\tUploading rows...`, v: `${commas(rows.length)} rows`, d: ['magenta', 'bold'] });
 	const results = await queueCalls(
-		rows.map((d, i) => mapRow(d, i)),
+		mapRow ? rows.map((d, i) => mapRow(d, i)) : rows,
 		uploadRow,
 		uploadConcurrency
 	);

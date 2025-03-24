@@ -1,6 +1,13 @@
 Changelog
 ===
 
+# 7.2.2
+
+> 2025-03-24
+
+Remove eslint and add jsconfig. Properly support `mapRow` in `setTableUpload.js`, and avoiding an unnecessary lop in `uploadRows.js` if we aren't mapping rows.
+
+
 # 7.2.1
 
 > 2025-02-20

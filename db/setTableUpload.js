@@ -8,9 +8,20 @@ import commas from '../lib/commas.js';
 
 dotenv.config();
 
+/**
+ * Set up a table for uploading
+ * @param {string} tableName - Name of table to upload to
+ * @param {object} options - Options object
+ * @param {string[]} options.cols - Columns to upload
+ * @param {string} [options.idColumn='id'] - Name of column to use as primary key
+ * @param {number} [options.logEvery=1_500] - How often to log
+ * @param {number} [options.total] - Total number of rows to upload
+ * @param {number} [options.indent] - How much to indent logs
+ * @param {function} [options.mapRow] - Function to map each row before uploading
+ */
 export default async function setTableUpload(
 	tableName,
-	{ cols, idColumn = 'id', logEvery = 1_500, total, indent } = {}
+	{ cols = [], idColumn = 'id', logEvery = 1500, total, indent, mapRow } = { cols: [] }
 ) {
 	const pool = connectPg(process.env);
 	const idt = makeIndent(indent);
@@ -44,7 +55,7 @@ export default async function setTableUpload(
 			VALUES(${cols.map((d, j) => `$${j + 1}`)})
 			ON CONFLICT(${idColumn}) DO NOTHING RETURNING FALSE`;
 
-		const values = cols.map(c => row[c]);
+		const values = cols.map(c => (mapRow ? mapRow(row[c]) : row[c]));
 
 		let result;
 		try {
@@ -60,7 +71,9 @@ export default async function setTableUpload(
 			notify({ m: `${idt}Error uploading row...`, v: commas(i + 1), d: 'error' });
 			console.error(err);
 
-			console.log(values.map((d, j) => `(${j + 1}) ${cols[j]}: ${d}`).join('\n'));
+			console.log(
+				values.map((d, j) => `(${j + 1}) ${cols[j]}: ${mapRow ? mapRow(d) : d}`).join('\n')
+			);
 			return { errors: 1 };
 		}
 
