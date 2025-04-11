@@ -1,11 +1,21 @@
 Changelog
 ===
 
+# 7.2.3
+
+> 2025-04-11
+
+Fix incorrect `mapRow` argument in `setTableUpload.js`
+
+* [aa381caafc4280e4c4133b5996071fcb001ca379](https://github.com/mhkeller/utils/commit/aa381caafc4280e4c4133b5996071fcb001ca379)
+
 # 7.2.2
 
 > 2025-03-24
 
-Remove eslint and add jsconfig. Properly support `mapRow` in `setTableUpload.js`, and avoiding an unnecessary lop in `uploadRows.js` if we aren't mapping rows.
+Remove eslint and add jsconfig. Properly support `mapRow` in `setTableUpload.js`, and avoiding an unnecessary loop in `uploadRows.js` if we aren't mapping rows.
+
+* [aa381caafc4280e4c4133b5996071fcb001ca379](https://github.com/mhkeller/utils/commit/aa381caafc4280e4c4133b5996071fcb001ca379)
 
 # 7.2.1
 
@@ -13,7 +23,6 @@ Remove eslint and add jsconfig. Properly support `mapRow` in `setTableUpload.js`
 
 Fix missing `await` in `uploadRows.js`. Report out how many rows failed on upload, too.
 
-* [aa381caafc4280e4c4133b5996071fcb001ca379](https://github.com/mhkeller/utils/commit/aa381caafc4280e4c4133b5996071fcb001ca379)
 
 # 7.2.0
 
