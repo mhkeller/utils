@@ -55,7 +55,7 @@ export default async function setTableUpload(
 			VALUES(${cols.map((d, j) => `$${j + 1}`)})
 			ON CONFLICT(${idColumn}) DO NOTHING RETURNING FALSE`;
 
-		const values = cols.map(c => (mapRow ? mapRow(row[c]) : row[c]));
+		const values = cols.map(c => (mapRow ? mapRow(row)[c] : row[c]));
 
 		let result;
 		try {
