@@ -30,7 +30,7 @@
     "dotenv": "^16.0.3",
     "indian-ocean": "^4.0.2",
     "jsdom": "^20.0.0",
-    "p-limit": "^4.0.0",
+    "p-limit": "^6.2.0",
     "pg": "^8.7.3",
     "playwright": "^1.32.1",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
