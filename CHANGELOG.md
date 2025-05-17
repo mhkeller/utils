@@ -1,6 +1,14 @@
 Changelog
 ===
 
+# 7.3.0
+
+> Not yet on npm
+
+Adds the `paginatedFetcher` and `getTodo` function. Adds an optional `base_dir` param to `genDirs`. 
+
+* [](https://github.com/mhkeller/utils/commit/)
+
 # 7.2.3
 
 > 2025-04-11

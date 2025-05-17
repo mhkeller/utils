@@ -9,6 +9,7 @@ export { default as initLogProgress } from './lib/initLogProgress.js';
 export { default as makeArray } from './lib/makeArray.js';
 export { default as makeIndent } from './lib/makeIndent.js';
 export { default as padBy } from './lib/padBy.js';
+export { default as paginatedFetcher } from './lib/paginatedFetcher.js';
 export { default as prettyMs } from './lib/prettyMs.js';
 export { default as queueCalls } from './lib/queueCalls.js';
 export { default as readDataset } from './lib/readDataset.js';
