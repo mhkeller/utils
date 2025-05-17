@@ -7,7 +7,7 @@ Changelog
 
 Adds the `paginatedFetcher` and `getTodo` function. Adds an optional `base_dir` param to `genDirs`. 
 
-* [](https://github.com/mhkeller/utils/commit/)
+* [e0600e401522e099d4a8cff85f8e0a113bae652a](https://github.com/mhkeller/utils/commit/e0600e401522e099d4a8cff85f8e0a113bae652a)
 
 # 7.2.3
 
