@@ -25,7 +25,7 @@
   "homepage": "https://github.com/mhkeller/utils#readme",
   "dependencies": {
     "@mhkeller/notify": "^1.2.0",
-    "@observablehq/plot": "^0.5.2",
+    "@observablehq/plot": "^0.6.17",
     "d3-format": "^3.1.0",
     "dotenv": "^16.0.3",
     "indian-ocean": "^4.0.2",
