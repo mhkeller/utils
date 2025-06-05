@@ -18,6 +18,7 @@ dotenv.config();
  * @param {number} [options.total] - Total number of rows to upload
  * @param {number} [options.indent] - How much to indent logs
  * @param {function} [options.mapRow] - Function to map each row before uploading
+ * @returns {Promise<{pool: import('pg').Pool, uploadRow: Function}>} - Pool and uploadRow function
  */
 export default async function setTableUpload(
 	tableName,

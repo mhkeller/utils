@@ -1,6 +1,14 @@
 Changelog
 ===
 
+# 7.4.0
+
+> Not yet on npm
+
+Adds the `createSqlite.js` function and adds better-sqlite3 as a peer dependency.
+
+* [](https://github.com/mhkeller/utils/commit/)
+  
 # 7.3.0
 
 > 2025-05-16
