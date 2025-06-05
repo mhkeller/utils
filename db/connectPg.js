@@ -1,5 +1,15 @@
 import pg from 'pg';
 
+/**
+ * Create a connection pool to a PostgreSQL database
+ * @param {Object} config - Configuration object
+ * @param {string} config.PG_HOST - PostgreSQL host
+ * @param {string} config.PG_DB - PostgreSQL database name
+ * @param {string} config.PG_USER - PostgreSQL username
+ * @param {string} [config.PG_PW] - PostgreSQL password
+ * @param {number} [config.PG_PORT] - PostgreSQL port
+ * @returns {pg.Pool} - PostgreSQL connection pool
+ */
 export default function connectPg(config) {
 	const credentials = {
 		user: config.PG_USER,
@@ -16,4 +26,4 @@ export default function connectPg(config) {
 	});
 
 	return pool;
-};
+}

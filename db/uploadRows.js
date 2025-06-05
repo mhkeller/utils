@@ -12,7 +12,8 @@ import commas from '../lib/commas.js';
  * @param {string} [options.idColumn='id'] - Name of column to use as primary key
  * @param {function} [options.mapRow] - Function to map each row before uploading
  * @param {number} [options.indent=3] - How much to indent logs
- * @param {number} [options.uploadConcurrency=1500] - If not provided, defaults to `logEvery`
+ * @param {number} [options.uploadConcurrency=1500] - Number of concurrent uploads
+ * @returns {Promise<void>} - Promise that resolves when upload is complete
  */
 export default async function uploadRows(
 	tableName,
