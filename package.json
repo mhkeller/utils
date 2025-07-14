@@ -5,7 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node test/uploadRows.test.js"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage"
   },
   "repository": {
     "type": "git",
@@ -36,7 +39,9 @@
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
   },
   "devDependencies": {
-    "prettier": "^3.5.3"
+    "@vitest/ui": "^3.2.4",
+    "prettier": "^3.5.3",
+    "vitest": "^3.2.4"
   },
   "peerDependencies": {
     "better-sqlite3": "^11.10.0"
