@@ -11,6 +11,7 @@ Adds the `createSqlite.js` function and adds better-sqlite3 as a peer dependency
 
 * Renames `roundDecimel` to `roundDecimal`
 * Removes `getDirname` since `import.meta.dirname` exists
+* Renames `filterObject` to `pick`
 
 * [#9](https://github.com/mhkeller/utils/pull/9)
   
