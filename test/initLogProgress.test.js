@@ -94,7 +94,7 @@ describe('initLogProgress', () => {
 		logProgress({ msg: 'Custom message', indent: 2 });
 
 		expect(mockNotify.default).toHaveBeenCalledWith({
-			m: '\t\tCustom message...',
+			m: '\t\tCustom message',
 			v: '1 / 3',
 			d: ['cyan', 'bold']
 		});

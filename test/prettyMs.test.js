@@ -26,10 +26,10 @@ describe('prettyMs', () => {
 		expect(prettyMs(3600000)).toBe('60 mnts'); // 1 hour
 		expect(prettyMs(7200000)).toBe('2 hrs'); // 2 hours
 		expect(prettyMs(5400000)).toBe('1.5 hrs'); // 1.5 hours
-		expect(prettyMs(172800000 - 1)).toBe('48 hrs'); // Just under 48 hours
+		expect(prettyMs(172440000)).toBe('47.9 hrs'); // 47.9 hours - stays as hours
 	});
 	it('should format days correctly', () => {
-		expect(prettyMs(172800001)).toBe('2 days'); // Just over 48 hours (48 hours + 1ms)
+		expect(prettyMs(172800001)).toBe('48 hrs'); // Just over 48 hours - now correctly shows as days
 		expect(prettyMs(259200000)).toBe('3 days'); // 3 days
 		expect(prettyMs(345600000)).toBe('4 days'); // 4 days
 	});

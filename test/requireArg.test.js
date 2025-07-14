@@ -39,7 +39,7 @@ describe('requireArg', () => {
 		const mockCheckIsTrue = await import('../lib/checkIsTrue.js');
 		process.argv = ['node', 'script.js']; // No third argument
 
-		requireArg('Test message');
+		expect(() => requireArg('Test message')).toThrow();
 
 		expect(mockCheckIsTrue.default).toHaveBeenCalledWith({
 			condition: false,
@@ -78,7 +78,7 @@ describe('requireArg', () => {
 		const mockCheckIsTrue = await import('../lib/checkIsTrue.js');
 		process.argv = ['node', 'script.js'];
 
-		requireArg();
+		expect(() => requireArg()).toThrow();
 
 		expect(mockCheckIsTrue.default).toHaveBeenCalledWith({
 			condition: false,

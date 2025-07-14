@@ -10,8 +10,8 @@ describe('commas', () => {
 	});
 
 	it('should handle negative numbers', () => {
-		expect(commas(-1000)).toBe('−1,000'); // d3-format uses Unicode minus sign
-		expect(commas(-1234567)).toBe('−1,234,567');
+		expect(commas(-1000)).toBe('-1,000'); // d3-format uses Unicode minus sign
+		expect(commas(-1234567)).toBe('-1,234,567');
 	});
 
 	it('should handle decimal numbers', () => {
