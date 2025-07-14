@@ -5,11 +5,9 @@ Changelog
 
 > 2025-07-13
 
-Adds the `createSqlite.js` function and adds better-sqlite3 as a peer dependency. Update types
+Adds the `createSqlite.js` function and adds better-sqlite3 as a peer dependency. Update types and other bug fixes.
 
-* [4554d675bf97033115d47b79ebc0f2b788fa72b3](https://github.com/mhkeller/utils/commit/4554d675bf97033115d47b79ebc0f2b788fa72b3)
-* [cf44357730bce6f806db051cf7a5887f05e81513](https://github.com/mhkeller/utils/commit/cf44357730bce6f806db051cf7a5887f05e81513)
-* [381d6a01c0b0dded995cbe292e87605d72f025dd](https://github.com/mhkeller/utils/commit/381d6a01c0b0dded995cbe292e87605d72f025dd)
+* [#9](https://github.com/mhkeller/utils/pull/9)
   
 # 7.3.0
 
