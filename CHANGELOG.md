@@ -1,6 +1,20 @@
 Changelog
 ===
 
+# 8.0.0
+
+> 2025-07-13
+
+Adds the `createSqlite.js` function and adds better-sqlite3 as a peer dependency. Update types and other bug fixes.
+
+**Breaking**
+
+* Renames `roundDecimel` to `roundDecimal`
+* Removes `getDirname` since `import.meta.dirname` exists
+* Renames `filterObject` to `pick`
+
+* [#9](https://github.com/mhkeller/utils/pull/9)
+  
 # 7.3.0
 
 > 2025-05-16
