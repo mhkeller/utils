@@ -23,9 +23,25 @@ export default function setTableUpdate(tableName, { cols, idColumn = 'id', pool 
 	 * @returns {Promise<import('pg').QueryResult>} - Query result
 	 */
 	async function updateRow(row) {
-		const text = `UPDATE ${tableName}
-			SET ${cols.map((d, j) => `${d} = $${j + 1}`)}
-			WHERE ${idColumn} = $${cols.length + 1}`;
+		// Validate table name and column names to prevent SQL injection
+		const tableNameRegex = /^[a-zA-Z_][a-zA-Z0-9_]*$/;
+		const columnNameRegex = /^[a-zA-Z_][a-zA-Z0-9_]*$/;
+
+		if (!tableNameRegex.test(tableName)) {
+			throw new Error(`Invalid table name: ${tableName}`);
+		}
+
+		if (!cols.every(col => columnNameRegex.test(col))) {
+			throw new Error(`Invalid column name(s) in: ${cols.join(', ')}`);
+		}
+
+		if (!columnNameRegex.test(idColumn)) {
+			throw new Error(`Invalid id column name: ${idColumn}`);
+		}
+
+		const text = `UPDATE "${tableName}"
+			SET ${cols.map((d, j) => `"${d}" = $${j + 1}`).join(', ')}
+			WHERE "${idColumn}" = $${cols.length + 1}`;
 
 		const values = [...cols.map(c => row[c]), row[idColumn]];
 

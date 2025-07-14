@@ -51,10 +51,26 @@ export default async function setTableUpload(
 	}
 
 	async function uploadRow(row, i) {
+		// Validate table name and column names to prevent SQL injection
+		const tableNameRegex = /^[a-zA-Z_][a-zA-Z0-9_]*$/;
+		const columnNameRegex = /^[a-zA-Z_][a-zA-Z0-9_]*$/;
+
+		if (!tableNameRegex.test(tableName)) {
+			throw new Error(`Invalid table name: ${tableName}`);
+		}
+
+		if (!cols.every(col => columnNameRegex.test(col))) {
+			throw new Error(`Invalid column name(s) in: ${cols.join(', ')}`);
+		}
+
+		if (!columnNameRegex.test(idColumn)) {
+			throw new Error(`Invalid id column name: ${idColumn}`);
+		}
+
 		const text = `INSERT INTO
-			${tableName}(${cols.join(', ')})
-			VALUES(${cols.map((d, j) => `$${j + 1}`)})
-			ON CONFLICT(${idColumn}) DO NOTHING RETURNING FALSE`;
+			"${tableName}"(${cols.map(col => `"${col}"`).join(', ')})
+			VALUES(${cols.map((d, j) => `$${j + 1}`).join(', ')})
+			ON CONFLICT("${idColumn}") DO NOTHING RETURNING FALSE`;
 
 		const values = cols.map(c => (mapRow ? mapRow(row)[c] : row[c]));
 
