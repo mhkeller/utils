@@ -1,8 +1,2 @@
 node_modules/
 .env
-
-# Generated documentation (API docs are generated from JSDoc)
-docs/api/
-# VitePress build output and cache
-docs/.vitepress/dist/
-docs/.vitepress/cache/

@@ -3,9 +3,6 @@ name: Deploy Documentation
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
-    types: [closed]
   workflow_dispatch:
 
 permissions:
@@ -21,12 +18,9 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -41,15 +35,12 @@ jobs:
         run: npm ci
 
       - name: Generate documentation
-        run: npm run docs:generate
-
-      - name: Build with VitePress
-        run: npm run docs:build
+        run: npm run docs
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
+          path: docs
 
   # Deployment job
   deploy:
@@ -58,7 +49,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
-    if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
