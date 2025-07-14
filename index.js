@@ -15,7 +15,7 @@ export { default as queueCalls } from './lib/queueCalls.js';
 export { default as readDataset } from './lib/readDataset.js';
 export { default as readXlsx } from './lib/readXlsx.js';
 export { default as requireArg } from './lib/requireArg.js';
-export { default as roundDecimel } from './lib/roundDecimel.js';
+export { default as roundDecimal } from './lib/roundDecimal.js';
 export { default as sleep } from './lib/sleep.js';
 export { default as sleepEvery } from './lib/sleepEvery.js';
 export { default as takeEvery } from './lib/takeEvery.js';
