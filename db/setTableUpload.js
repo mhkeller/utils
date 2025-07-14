@@ -24,8 +24,24 @@ export default async function setTableUpload(
 	tableName,
 	{ cols = [], idColumn = 'id', logEvery = 1500, total, indent, mapRow } = { cols: [] }
 ) {
+	// Validate table name and column names once to prevent SQL injection
+	const tableNameRegex = /^[a-zA-Z_][a-zA-Z0-9_]*$/;
+	const columnNameRegex = /^[a-zA-Z_][a-zA-Z0-9_]*$/;
+
+	if (!tableNameRegex.test(tableName)) {
+		throw new Error(`Invalid table name: ${tableName}`);
+	}
+
+	if (!cols.every(col => columnNameRegex.test(col))) {
+		throw new Error(`Invalid column name(s) in: ${cols.join(', ')}`);
+	}
+
+	if (!columnNameRegex.test(idColumn)) {
+		throw new Error(`Invalid id column name: ${idColumn}`);
+	}
+
 	const pool = connectPg(process.env);
-	const idt = makeIndent(indent);
+	const idt = makeIndent(indent || 0);
 
 	/**
 	 * Check all of our columns exist in our target table
@@ -53,7 +69,7 @@ export default async function setTableUpload(
 	async function uploadRow(row, i) {
 		const text = `INSERT INTO
 			"${tableName}"(${cols.map(col => `"${col}"`).join(', ')})
-			VALUES(${cols.map((d, j) => `$${j + 1}`).join(', ')})
+			VALUES(${cols.map((_, j) => `$${j + 1}`).join(', ')})
 			ON CONFLICT("${idColumn}") DO NOTHING RETURNING FALSE`;
 
 		const values = cols.map(c => (mapRow ? mapRow(row)[c] : row[c]));
@@ -65,7 +81,7 @@ export default async function setTableUpload(
 				values
 			});
 
-			if (i % logEvery === 0 || i === total - 1) {
+			if (total && (i % logEvery === 0 || i === total - 1)) {
 				notify({ m: `${idt}Uploaded...`, v: commas(i + 1), d: ['green', 'bold'] });
 			}
 		} catch (err) {
