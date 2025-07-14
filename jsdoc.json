@@ -1,0 +1,20 @@
+{
+  "source": {
+    "include": ["./lib/", "./db/", "./scrape/", "./README.md"],
+    "includePattern": "\\.(js|md)$",
+    "exclude": ["node_modules/"]
+  },
+  "opts": {
+    "destination": "./docs/",
+    "recurse": true,
+    "readme": "./README.md"
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  },
+  "metadata": {
+    "title": "@mhkeller/utils Documentation"
+  }
+}
