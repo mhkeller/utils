@@ -99,7 +99,7 @@ function generateFunctionDocs(functionName, filePath, folder = 'lib') {
 	const jsdoc = extractJSDoc(filePath);
 	const fileName = folder === 'lib' ? `${functionName}.js` : `${functionName}.js`;
 	const githubUrl = `https://github.com/mhkeller/utils/blob/main/${folder}/${fileName}`;
-	
+
 	if (!jsdoc) {
 		return `## ${functionName}
 
@@ -168,7 +168,7 @@ function generateDatabaseDocs() {
 		const filePath = join(dbDir, file);
 		const githubUrl = `https://github.com/mhkeller/utils/blob/main/db/${file}`;
 		const jsdoc = extractJSDoc(filePath);
-		
+
 		if (!jsdoc) {
 			markdown += `## ${name}
 
@@ -216,9 +216,9 @@ function generateSQLiteDocs() {
 	const filePath = join(libDir, 'createSqlite.js');
 	const githubUrl = 'https://github.com/mhkeller/utils/blob/main/lib/createSqlite.js';
 	let markdown = `# SQLite Functions\n\nUtilities for working with SQLite databases.\n\n`;
-	
+
 	const jsdoc = extractJSDoc(filePath);
-	
+
 	if (!jsdoc) {
 		markdown += `## createSqlite
 
@@ -273,7 +273,7 @@ function generateScrapingDocs() {
 		const filePath = join(scrapeDir, file);
 		const githubUrl = `https://github.com/mhkeller/utils/blob/main/scrape/${file}`;
 		const jsdoc = extractJSDoc(filePath);
-		
+
 		if (!jsdoc) {
 			markdown += `## ${name}
 
