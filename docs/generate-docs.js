@@ -97,10 +97,13 @@ function extractJSDoc(filePath) {
 
 function generateFunctionDocs(functionName, filePath, folder = 'lib') {
 	const jsdoc = extractJSDoc(filePath);
+	const fileName = folder === 'lib' ? `${functionName}.js` : `${functionName}.js`;
+	const githubUrl = `https://github.com/mhkeller/utils/blob/main/${folder}/${fileName}`;
+	
 	if (!jsdoc) {
 		return `## ${functionName}
 
-**File:** \`${folder}/${functionName}.js\`
+**File:** \`${folder}/${functionName}.js\` | [View Source](${githubUrl})
 
 _Documentation not available - please check the source file for details._
 
@@ -109,7 +112,7 @@ _Documentation not available - please check the source file for details._
 
 	let markdown = `## ${functionName}
 
-**File:** \`${folder}/${functionName}.js\`
+**File:** \`${folder}/${functionName}.js\` | [View Source](${githubUrl})
 
 ${jsdoc.description}
 
@@ -163,7 +166,46 @@ function generateDatabaseDocs() {
 
 	dbFunctions.forEach(({ name, file }) => {
 		const filePath = join(dbDir, file);
-		markdown += generateFunctionDocs(name, filePath, 'db');
+		const githubUrl = `https://github.com/mhkeller/utils/blob/main/db/${file}`;
+		const jsdoc = extractJSDoc(filePath);
+		
+		if (!jsdoc) {
+			markdown += `## ${name}
+
+**File:** \`db/${file}\` | [View Source](${githubUrl})
+
+_Documentation not available - please check the source file for details._
+
+`;
+			return;
+		}
+
+		markdown += `## ${name}
+
+**File:** \`db/${file}\` | [View Source](${githubUrl})
+
+${jsdoc.description}
+
+`;
+
+		if (jsdoc.params.length > 0) {
+			markdown += `**Parameters:**\n`;
+			jsdoc.params.forEach(param => {
+				const isOptional =
+					param.name.includes('[') || param.description.toLowerCase().includes('optional');
+				const cleanName = param.name.replace(/[\[\]]/g, '');
+				const optionalText = isOptional ? ', optional' : '';
+				markdown += `- \`${cleanName}\` (${param.type}${optionalText}) - ${param.description}\n`;
+			});
+			markdown += '\n';
+		}
+
+		if (jsdoc.returns) {
+			markdown += `**Returns:**\n- ${jsdoc.returns.type} - ${jsdoc.returns.description}\n\n`;
+		}
+
+		// Add example placeholder
+		markdown += `**Example:**\n\`\`\`js\nimport { ${name} } from '@mhkeller/utils/db'\n\n// Usage example for ${name}\n\`\`\`\n\n`;
 	});
 
 	writeFileSync(join(docsDir, 'api', 'database.md'), markdown);
@@ -172,8 +214,47 @@ function generateDatabaseDocs() {
 
 function generateSQLiteDocs() {
 	const filePath = join(libDir, 'createSqlite.js');
+	const githubUrl = 'https://github.com/mhkeller/utils/blob/main/lib/createSqlite.js';
 	let markdown = `# SQLite Functions\n\nUtilities for working with SQLite databases.\n\n`;
-	markdown += generateFunctionDocs('createSqlite', filePath);
+	
+	const jsdoc = extractJSDoc(filePath);
+	
+	if (!jsdoc) {
+		markdown += `## createSqlite
+
+**File:** \`lib/createSqlite.js\` | [View Source](${githubUrl})
+
+_Documentation not available - please check the source file for details._
+
+`;
+	} else {
+		markdown += `## createSqlite
+
+**File:** \`lib/createSqlite.js\` | [View Source](${githubUrl})
+
+${jsdoc.description}
+
+`;
+
+		if (jsdoc.params.length > 0) {
+			markdown += `**Parameters:**\n`;
+			jsdoc.params.forEach(param => {
+				const isOptional =
+					param.name.includes('[') || param.description.toLowerCase().includes('optional');
+				const cleanName = param.name.replace(/[\[\]]/g, '');
+				const optionalText = isOptional ? ', optional' : '';
+				markdown += `- \`${cleanName}\` (${param.type}${optionalText}) - ${param.description}\n`;
+			});
+			markdown += '\n';
+		}
+
+		if (jsdoc.returns) {
+			markdown += `**Returns:**\n- ${jsdoc.returns.type} - ${jsdoc.returns.description}\n\n`;
+		}
+
+		// Add example placeholder
+		markdown += `**Example:**\n\`\`\`js\nimport { createSqlite } from '@mhkeller/utils'\n\n// Usage example for createSqlite\n\`\`\`\n\n`;
+	}
 
 	writeFileSync(join(docsDir, 'api', 'sqlite.md'), markdown);
 	console.log(`✅ Generated SQLite docs`);
@@ -190,7 +271,46 @@ function generateScrapingDocs() {
 
 	scrapeFunctions.forEach(({ name, file }) => {
 		const filePath = join(scrapeDir, file);
-		markdown += generateFunctionDocs(name, filePath, 'scrape');
+		const githubUrl = `https://github.com/mhkeller/utils/blob/main/scrape/${file}`;
+		const jsdoc = extractJSDoc(filePath);
+		
+		if (!jsdoc) {
+			markdown += `## ${name}
+
+**File:** \`scrape/${file}\` | [View Source](${githubUrl})
+
+_Documentation not available - please check the source file for details._
+
+`;
+			return;
+		}
+
+		markdown += `## ${name}
+
+**File:** \`scrape/${file}\` | [View Source](${githubUrl})
+
+${jsdoc.description}
+
+`;
+
+		if (jsdoc.params.length > 0) {
+			markdown += `**Parameters:**\n`;
+			jsdoc.params.forEach(param => {
+				const isOptional =
+					param.name.includes('[') || param.description.toLowerCase().includes('optional');
+				const cleanName = param.name.replace(/[\[\]]/g, '');
+				const optionalText = isOptional ? ', optional' : '';
+				markdown += `- \`${cleanName}\` (${param.type}${optionalText}) - ${param.description}\n`;
+			});
+			markdown += '\n';
+		}
+
+		if (jsdoc.returns) {
+			markdown += `**Returns:**\n- ${jsdoc.returns.type} - ${jsdoc.returns.description}\n\n`;
+		}
+
+		// Add example placeholder
+		markdown += `**Example:**\n\`\`\`js\nimport { ${name} } from '@mhkeller/utils/scrape'\n\n// Usage example for ${name}\n\`\`\`\n\n`;
 	});
 
 	writeFileSync(join(docsDir, 'api', 'scraping.md'), markdown);

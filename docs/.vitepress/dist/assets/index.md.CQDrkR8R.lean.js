@@ -1,1 +1,0 @@
-import{_ as i,c as a,o as n,ae as t}from"./chunks/framework.BuyCb9nx.js";const g=JSON.parse('{"title":"@mhkeller/utils","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),l={name:"index.md"};function e(h,s,p,k,r,o){return n(),a("div",null,s[0]||(s[0]=[t("",13)]))}const E=i(l,[["render",e]]);export{g as __pageData,E as default};
