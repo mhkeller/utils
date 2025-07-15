@@ -1,6 +1,7 @@
 export { default as checkIsTrue } from './lib/checkIsTrue.js';
 export { default as commas } from './lib/commas.js';
 export { default as createLookup } from './lib/createLookup.js';
+export { default as createSqlite } from './lib/createSqlite.js';
 export { default as pick } from './lib/pick.js';
 export { default as genDirs } from './lib/genDirs.js';
 export { default as getNow } from './lib/getNow.js';
