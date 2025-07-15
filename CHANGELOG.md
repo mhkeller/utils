@@ -1,6 +1,15 @@
 Changelog
 ===
 
+# 8.0.1
+
+> 2025-07-15
+
+* Fix: Export `createSqlite`.
+
+* [3745fcb17c323687e3e590e587b5df6b2a94a8f2](https://github.com/mhkeller/utils/commit/3745fcb17c323687e3e590e587b5df6b2a94a8f2)
+
+
 # 8.0.0
 
 > 2025-07-13
