@@ -1,6 +1,12 @@
 Changelog
 ===
 
+# 8.0.2
+
+> 2025-07-16
+
+* [51450361b3290379d9b069bbb043a3e6b943bfb9](https://github.com/mhkeller/utils/commit/3745fcb17c323687e3e590e587b5df6b2a94a8f2)
+
 # 8.0.1
 
 > 2025-07-15
