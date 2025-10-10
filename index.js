@@ -4,6 +4,7 @@ export { default as createLookup } from './lib/createLookup.js';
 export { default as createSqlite } from './lib/createSqlite.js';
 export { default as pick } from './lib/pick.js';
 export { default as genDirs } from './lib/genDirs.js';
+export { default as genRange } from './lib/genRange.ts';
 export { default as getNow } from './lib/getNow.js';
 export { default as initLogProgress } from './lib/initLogProgress.js';
 export { default as makeArray } from './lib/makeArray.js';
