@@ -1,26 +1,4 @@
 /**
- * Returns an array of numbers from start to stop (exclusive) by step.
- * If step is not provided, it defaults to 1.
- * D3-array range source: https://github.com/d3/d3-array/blob/main/src/range.js
- */
-function range(start: number, stop: number, step = 1): number[] {
-	(start = +start),
-		(stop = +stop),
-		(step = (n = arguments.length) < 2 ? ((stop = start), (start = 0), 1) : n < 3 ? 1 : +step);
-
-	var i = -1,
-		// @ts-ignore
-		n = Math.max(0, Math.ceil((stop - start) / step)) | 0,
-		range = new Array(n);
-
-	while (++i < n) {
-		range[i] = start + i * step;
-	}
-
-	return range;
-}
-
-/**
  * Generate a range of numbers with a specified step, inclusive of the stop value.
  */
 export default function genRange(start: number, stop: number, step = 1): number[] {
@@ -45,4 +23,26 @@ export default function genRange(start: number, stop: number, step = 1): number[
 	const r = range(start, stop, step).map(format(step));
 	r.push(stop);
 	return r;
+}
+
+/**
+ * Returns an array of numbers from start to stop (exclusive) by step.
+ * If step is not provided, it defaults to 1.
+ * D3-array range source: https://github.com/d3/d3-array/blob/main/src/range.js
+ */
+function range(start: number, stop: number, step = 1): number[] {
+	(start = +start),
+		(stop = +stop),
+		(step = (n = arguments.length) < 2 ? ((stop = start), (start = 0), 1) : n < 3 ? 1 : +step);
+
+	var i = -1,
+		// @ts-ignore
+		n = Math.max(0, Math.ceil((stop - start) / step)) | 0,
+		range = new Array(n);
+
+	while (++i < n) {
+		range[i] = start + i * step;
+	}
+
+	return range;
 }
