@@ -1,11 +1,21 @@
 Changelog
 ===
 
+# 8.1.0
+
+> Not yet on npm
+
+Add `genRange` and `textractTable` functions.
+
+* [390a167f20f174a5f0eb586a91a9f2d597a74edb](https://github.com/mhkeller/utils/commit/390a167f20f174a5f0eb586a91a9f2d597a74edb)
+
 # 8.0.2
 
 > 2025-07-16
 
-* [51450361b3290379d9b069bbb043a3e6b943bfb9](https://github.com/mhkeller/utils/commit/3745fcb17c323687e3e590e587b5df6b2a94a8f2)
+Remove double ellipse in `initLogProgress.js`.
+
+* [51450361b3290379d9b069bbb043a3e6b943bfb9](https://github.com/mhkeller/utils/commit/51450361b3290379d9b069bbb043a3e6b943bfb9)
 
 # 8.0.1
 
