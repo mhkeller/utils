@@ -5,9 +5,11 @@ Changelog
 
 > Not yet on npm
 
-Add `genRange` and `textractTable` functions.
+Add `genRange` and `textractTable` functions. Switch to pnpm
 
 * [390a167f20f174a5f0eb586a91a9f2d597a74edb](https://github.com/mhkeller/utils/commit/390a167f20f174a5f0eb586a91a9f2d597a74edb)
+* [41a1188a287c5c31d22671446c479ef80d0f2cb0](https://github.com/mhkeller/utils/commit/41a1188a287c5c31d22671446c479ef80d0f2cb0)
+* [6f7b952823d21f839da739391c69a42eb0f3e16f](https://github.com/mhkeller/utils/commit/6f7b952823d21f839da739391c69a42eb0f3e16f)
 
 # 8.0.2
 
