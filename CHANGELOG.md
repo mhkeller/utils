@@ -3,7 +3,7 @@ Changelog
 
 # 8.1.0
 
-> Not yet on npm
+> 2026-02-09
 
 Add `genRange` and `textractTable` functions. Switch to pnpm
 

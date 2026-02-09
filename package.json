@@ -24,21 +24,21 @@
   },
   "homepage": "https://github.com/mhkeller/utils#readme",
   "dependencies": {
-    "@aws-sdk/client-textract": "^3.907.0",
+    "@aws-sdk/client-textract": "^3.985.0",
     "@cantoo/pdf-lib": "^2.5.3",
-    "@mhkeller/notify": "^1.2.0",
+    "@mhkeller/notify": "^1.2.1",
     "@observablehq/plot": "^0.6.17",
-    "d3-format": "^3.1.0",
-    "dotenv": "^17.0.1",
-    "indian-ocean": "^4.0.2",
-    "jsdom": "^27.0.0",
-    "p-limit": "^7.0.0",
-    "pg": "^8.7.3",
-    "playwright": "^1.32.1",
+    "d3-format": "^3.1.2",
+    "dotenv": "^17.2.4",
+    "indian-ocean": "^4.0.3",
+    "jsdom": "^27.4.0",
+    "p-limit": "^7.3.0",
+    "pg": "^8.18.0",
+    "playwright": "^1.58.2",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
   },
   "devDependencies": {
-    "prettier": "^3.5.3"
+    "prettier": "^3.8.1"
   },
   "peerDependencies": {
     "better-sqlite3": "^11.10.0"
