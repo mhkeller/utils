@@ -1,6 +1,13 @@
 Changelog
 ===
 
+# 8.1.1
+
+> 2026-02-16
+
+Convert from ts to js with jsdoc because ts typescript removal does not work for imports.
+* [faf393586aae1124e1a89bc764723527157d43a1](https://github.com/mhkeller/utils/commit/faf393586aae1124e1a89bc764723527157d43a1)
+
 # 8.1.0
 
 > 2026-02-09
